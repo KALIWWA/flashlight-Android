@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageButton = findViewById(R.id.imageButton);
+
         if (getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
             camera = Camera.open();
             parameters = camera.getParameters();
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         imageButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
