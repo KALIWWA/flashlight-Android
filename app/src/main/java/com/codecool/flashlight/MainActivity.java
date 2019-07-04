@@ -12,11 +12,11 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton imageButton;
-    Camera camera;
-    Camera.Parameters parameters;
-    boolean isFlash = false;
-    boolean isOn = false;
+    private ImageButton imageButton;
+    private static Camera camera;
+    private Camera.Parameters parameters;
+    private boolean isFlash = false;
+    private boolean isOn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +38,19 @@ public class MainActivity extends AppCompatActivity {
                 if (isFlash) {
                     if (!isOn) {
                         imageButton.setImageResource(R.drawable.btn_on);
+                        System.out.println(parameters.getFlashMode());
                         parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                         camera.setParameters(parameters);
                         camera.startPreview();
+                        System.out.println(parameters.getFlashMode());
                         isOn = true;
                     } else {
                         imageButton.setImageResource(R.drawable.btn_off);
+                        System.out.println(parameters.getFlashMode());
                         parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                         camera.setParameters(parameters);
                         camera.stopPreview();
+                        System.out.println(parameters.getFlashMode());
                         isOn = false;
                     }
 

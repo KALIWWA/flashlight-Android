@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Flashlight App"
+        android:text="Flashlight by Kali"
         android:textColor="@color/colorPrimary"
         android:textSize="38dp"
         android:textStyle="bold"
